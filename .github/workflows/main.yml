@@ -1,22 +1,23 @@
 on:
-  # push:
   workflow_dispatch:
     branches:
       - main
-
 permissions:
   pull-requests: write
   contents: write
   repository-projects: write
-
 jobs:
   display_files:
-    name: Job name display file content
+    name: Display file content
     runs-on: [self-hosted, Windows, X64]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Display file content
         run: |
-          cat test.txt
-        shell: bash
+          type test.txt
+        shell: cmd
+      - name: List directory contents
+        run: |
+          dir
+        shell: cmd
