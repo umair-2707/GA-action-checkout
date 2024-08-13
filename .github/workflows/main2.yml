@@ -54,3 +54,4 @@ jobs:
         run: |
           mysql --protocol=tcp -h localhost -P 3306 -u ${{ env.MYSQL_USER }} -p${{ env.MYSQL_PASSWORD }} ${{ env.NEW_DATABASE }} -e "SELECT * FROM users;"
 
+
