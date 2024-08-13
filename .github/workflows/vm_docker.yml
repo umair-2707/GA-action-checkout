@@ -1,6 +1,8 @@
 name: Example
 on:
   workflow_dispatch:
+    branches:
+      - main
 jobs:
   job-with-mysql-8_0:
     runs-on: [self-hosted, Linux, X64]
