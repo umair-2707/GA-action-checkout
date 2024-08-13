@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+    branches:
+      - main
+permissions:
+  pull-requests: write
+  contents: write
+  repository-projects: write
+jobs:
+  display_files:
+    name: Display file content
+    runs-on: [self-hosted, Windows, X64, ummi]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Display file content
+        run: |
+          type test.txt
+        shell: cmd
