@@ -9,11 +9,18 @@ permissions:
 jobs:
   display_files:
     name: Display file content
-    runs-on: [self-hosted, Windows, X64, ummi]
+    runs-on: [self-hosted, Windows, X64]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Display file content
         run: |
           type test.txt
+        shell: cmd
+      - name: Show working directory
+        run: |
+          echo "Current working directory:"
+          cd
+          echo "Contents of _work folder:"
+          dir _work
         shell: cmd
